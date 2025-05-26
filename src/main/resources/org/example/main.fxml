@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.MainController"
+      spacing="10" styleClass="root">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <TabPane fx:id="mainTabPane">
+        <Tab text="Dashboard" closable="false">
+            <VBox spacing="20" alignment="CENTER">
+                <Label text="Välkommen till SecondHand-butiken!" styleClass="dashboard-title">
+                    <font>
+                        <Font name="Arial Bold" size="24"/>
+                    </font>
+                </Label>
+                <Label fx:id="dashboardStats" text="Laddar statistik..." styleClass="dashboard-stats">
+                    <font>
+                        <Font name="Arial" size="16"/>
+                    </font>
+                </Label>
+            </VBox>
+        </Tab>
+        <Tab text="Customers" closable="false">
+            <fx:include source="customer.fxml"/>
+        </Tab>
+        <Tab text="Employees" closable="false">
+            <fx:include source="employee.fxml"/>
+        </Tab>
+        <Tab text="Furniture" closable="false">
+            <fx:include source="furniture.fxml"/>
+        </Tab>
+        <Tab text="Orders" closable="false">
+            <fx:include source="order.fxml"/>
+        </Tab>
+    </TabPane>
+</VBox>

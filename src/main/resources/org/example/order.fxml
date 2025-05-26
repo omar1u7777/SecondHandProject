@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.OrderController"
+            fitToWidth="true" fitToHeight="true">
+    <content>
+        <VBox spacing="15" prefWidth="800.0">
+            <stylesheets>
+                <String fx:value="/org/example/style.css"/>
+            </stylesheets>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+
+            <Label text="Hantera Ordrar" styleClass="welcome-label"/>
+
+            <GridPane hgap="10" vgap="10" alignment="CENTER_LEFT">
+                <Label text="Order-ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="orderIdField" prefWidth="200" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Orderdatum:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <DatePicker fx:id="orderDatePicker" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Kund-ID:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="customerIdField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Anställd-ID:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="employeeIdField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button fx:id="createOrderButton" text="Skapa Order" onAction="#createOrder" styleClass="button">
+                    <tooltip>
+                        <Tooltip text="Skapa en ny order med orderrader"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="showOrdersButton" text="Visa alla ordrar" onAction="#showAllOrders" styleClass="button">
+                    <tooltip>
+                        <Tooltip text="Visa alla ordrar i tabellen"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="showOrdersWithNamesButton" text="Visa med namn" onAction="#showOrdersWithCustomerNameForEmployee" styleClass="button">
+                    <tooltip>
+                        <Tooltip text="Visa ordrar med kundnamn för en anställd"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="showOrderDetailsButton" text="Visa detaljer" onAction="#showOrderDetailsForEmployee" styleClass="button">
+                    <tooltip>
+                        <Tooltip text="Visa detaljerade ordrar för en anställd"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="deleteOrderButton" text="Ta bort order" onAction="#deleteOrder" styleClass="button">
+                    <tooltip>
+                        <Tooltip text="Ta bort en order med angivet ID"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="showOrderValueButton" text="Visa värde" onAction="#showOrderValue" styleClass="button">
+                    <tooltip>
+                        <Tooltip text="Visa totalvärdet för en order"/>
+                    </tooltip>
+                </Button>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Filtrera ordrar:"/>
+                <TextField fx:id="filterField" prefWidth="200" promptText="Sök på kund-ID eller anställd-ID"/>
+            </HBox>
+
+            <Label text="Ordrar" styleClass="table-label"/>
+            <TableView fx:id="orderTable" prefHeight="200" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="orderDateColumn" text="Orderdatum" prefWidth="120"/>
+                    <TableColumn fx:id="customerIdColumn" text="Kund-ID" prefWidth="80"/>
+                    <TableColumn fx:id="employeeIdColumn" text="Anställd-ID" prefWidth="80"/>
+                </columns>
+            </TableView>
+
+            <Label text="Orderdetaljer" styleClass="table-label"/>
+            <TableView fx:id="detailTable" prefHeight="200" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="detailIdColumn" text="Order-ID" prefWidth="50"/>
+                    <TableColumn fx:id="detailOrderDateColumn" text="Orderdatum" prefWidth="100"/>
+                    <TableColumn fx:id="customerNameColumn" text="Kundnamn" prefWidth="150"/>
+                    <TableColumn fx:id="furnitureNameColumn" text="Möbelnamn" prefWidth="120"/>
+                    <TableColumn fx:id="quantityColumn" text="Antal" prefWidth="60"/>
+                    <TableColumn fx:id="priceColumn" text="Pris" prefWidth="80"/>
+                </columns>
+            </TableView>
+
+            <Label fx:id="feedbackLabel" wrapText="true" styleClass="feedback-label"/>
+        </VBox>
+    </content>
+</ScrollPane>

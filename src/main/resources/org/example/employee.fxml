@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.EmployeeController"
+      spacing="15" prefHeight="600.0" prefWidth="800.0">
+    <stylesheets>
+        <String fx:value="/org/example/style.css"/>
+    </stylesheets>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+
+    <Label text="Hantera Anställda" styleClass="welcome-label"/>
+
+    <GridPane hgap="10" vgap="10" alignment="CENTER_LEFT">
+        <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="idField" prefWidth="200" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Förnamn:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="firstNameField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Efternamn:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="lastNameField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="E-post:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="emailField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Telefon:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <TextField fx:id="phoneField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="Anst.datum:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <DatePicker fx:id="hireDatePicker" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="addButton" text="Lägg till" onAction="#handleAddEmployee" styleClass="button">
+            <tooltip>
+                <Tooltip text="Lägg till en ny anställd i databasen"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="showAllButton" text="Visa alla" onAction="#handleShowAllEmployees" styleClass="button">
+            <tooltip>
+                <Tooltip text="Visa alla anställda i tabellen"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="updateButton" text="Uppdatera" onAction="#handleUpdateEmployee" styleClass="button">
+            <tooltip>
+                <Tooltip text="Uppdatera den valda anställdas information"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="deleteButton" text="Ta bort" onAction="#handleDeleteEmployee" styleClass="button">
+            <tooltip>
+                <Tooltip text="Ta bort den valda anställden"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="searchButton" text="Sök efter ID" onAction="#handleShowEmployeeById" styleClass="button">
+            <tooltip>
+                <Tooltip text="Sök efter en anställd med specifikt ID"/>
+            </tooltip>
+        </Button>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Filtrera anställda:"/>
+        <TextField fx:id="filterField" prefWidth="200" promptText="Sök på namn eller e-post"/>
+    </HBox>
+
+    <TableView fx:id="employeeTable" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="firstNameColumn" text="Förnamn" prefWidth="100"/>
+            <TableColumn fx:id="lastNameColumn" text="Efternamn" prefWidth="100"/>
+            <TableColumn fx:id="emailColumn" text="E-post" prefWidth="150"/>
+            <TableColumn fx:id="phoneColumn" text="Telefon" prefWidth="100"/>
+            <TableColumn fx:id="hireDateColumn" text="Anst.datum" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <Label fx:id="feedbackLabel" wrapText="true" styleClass="feedback-label"/>
+</VBox>

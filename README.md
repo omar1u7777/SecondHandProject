@@ -1,4 +1,4 @@
-```markdown
+
 # SecondHandProject
 
 A JavaFX-based application for managing a second-hand furniture store. The application provides a graphical user interface (GUI) for handling customer management, furniture inventory, order processing, and employee order tracking. It features robust error handling, input validation, and database integration with MySQL.
@@ -28,46 +28,50 @@ A JavaFX-based application for managing a second-hand furniture store. The appli
 
 ---
 
+
+
 ## Project Structure
 
 ```
 
 SecondHandProject/
 ├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── org/example/
-│   │   │       ├── App.java
-│   │   │       ├── CustomerController.java
-│   │   │       ├── EmployeeController.java
-│   │   │       ├── FurnitureController.java
-│   │   │       ├── OrderController.java
-│   │   │       ├── OrderDetail.java
-│   │   │       ├── OrderHead.java
-│   │   │       ├── OrderLine.java
-│   │   │       ├── Customer.java
-│   │   │       ├── Employee.java
-│   │   │       ├── Furniture.java
-│   │   │       ├── CustomerDao.java
-│   │   │       ├── EmployeeDao.java
-│   │   │       ├── FurnitureDao.java
-│   │   │       ├── OrderDao.java
-│   │   │       └── DatabaseConfig.java
-│   │   ├── resources/
-│   │   │   ├── org/example/
-│   │   │   │   ├── main.fxml
-│   │   │   │   ├── customer.fxml
-│   │   │   │   ├── employee.fxml
-│   │   │   │   ├── furniture.fxml
-│   │   │   │   ├── order.fxml
-│   │   │   │   └── style.css
-│   │   │   ├── schema.sql
-│   │   │   └── db.properties
+│   └── main/
+│       ├── java/
+│       │   └── org/
+│       │       └── example/
+│       │           ├── App.java
+│       │           ├── CustomerController.java
+│       │           ├── EmployeeController.java
+│       │           ├── FurnitureController.java
+│       │           ├── OrderController.java
+│       │           ├── OrderDetail.java
+│       │           ├── OrderHead.java
+│       │           ├── OrderLine.java
+│       │           ├── Customer.java
+│       │           ├── Employee.java
+│       │           ├── Furniture.java
+│       │           ├── CustomerDao.java
+│       │           ├── EmployeeDao.java
+│       │           ├── FurnitureDao.java
+│       │           ├── OrderDao.java
+│       │           └── DatabaseConfig.java
+│       └── resources/
+│           ├── org/
+│           │   └── example/
+│           │       ├── main.fxml
+│           │       ├── customer.fxml
+│           │       ├── employee.fxml
+│           │       ├── furniture.fxml
+│           │       ├── order.fxml
+│           │       └── style.css
+│           ├── schema.sql
+│           └── db.properties
 ├── pom.xml
 ├── README.md
 └── LICENSE
 
-````
+```
 
 ---
 

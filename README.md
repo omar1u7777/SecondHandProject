@@ -1,4 +1,4 @@
-
+```markdown
 # SecondHandProject
 
 A JavaFX-based application for managing a second-hand furniture store. The application provides a graphical user interface (GUI) for handling customer management, furniture inventory, order processing, and employee order tracking. It features robust error handling, input validation, and database integration with MySQL.
@@ -27,8 +27,6 @@ A JavaFX-based application for managing a second-hand furniture store. The appli
   Robust input validation and user-friendly error messages in the GUI.  
 
 ---
-
-
 
 ## Project Structure
 
@@ -71,7 +69,7 @@ SecondHandProject/
 ├── README.md
 └── LICENSE
 
-```
+````
 
 ---
 
@@ -85,12 +83,12 @@ SecondHandProject/
 
 2. **Set up MySQL database**
 
-    * Install MySQL and create a database (e.g., `furniture_db`).
-    * Run the SQL script to create the tables:
+  * Install MySQL and create a database (e.g., `furniture_db`).
+  * Run the SQL script to create the tables:
 
-      ```bash
-      mysql -u <your_username> -p furniture_db < src/main/resources/schema.sql
-      ```
+    ```bash
+    mysql -u <your_username> -p furniture_db < src/main/resources/schema.sql
+    ```
 
 3. **Configure `db.properties`**
    Edit `src/main/resources/db.properties` with your credentials:
@@ -113,16 +111,16 @@ SecondHandProject/
 
 5. **Run the application**
 
-    * As a jar:
+  * As a jar:
 
-      ```bash
-      java -jar target/SecondHandProject-1.0-SNAPSHOT.jar
-      ```
-    * Or directly with Maven:
+    ```bash
+    java -jar target/SecondHandProject-1.0-SNAPSHOT.jar
+    ```
+  * Or directly with Maven:
 
-      ```bash
-      mvn javafx:run
-      ```
+    ```bash
+    mvn javafx:run
+    ```
 
 ---
 
@@ -157,18 +155,18 @@ Defined in `pom.xml`:
 1. **Launch the app**
 2. **Navigate tabs**
 
-    * **Home**: Overview or dashboard
-    * **Customers**: Manage customer records
-    * **Employees**: Manage employee records
-    * **Furniture**: Manage inventory
-    * **Orders**: Create/manage orders with order lines
+  * **Home**: Overview or dashboard
+  * **Customers**: Manage customer records
+  * **Employees**: Manage employee records
+  * **Furniture**: Manage inventory
+  * **Orders**: Create/manage orders with order lines
 3. **Interact**
 
-    * Add/update/delete records with the GUI buttons
-    * Use filters or dialog inputs to search by ID or other fields
-    * View detailed order summaries and totals 
+  * Add/update/delete records with the GUI buttons
+  * Use filters or dialog inputs to search by ID or other fields
+  * View detailed order summaries and totals
 
-   ![SecondHandProject GUI](docs/images/screenshot-gui.png)
+![SecondHandProject GUI](docs/images/screenshot-gui.png)
 
 ---
 

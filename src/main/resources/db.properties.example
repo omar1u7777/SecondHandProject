@@ -1,0 +1,8 @@
+# Database Configuration Example
+# Copy this file to db.properties and update with your actual credentials
+# DO NOT commit db.properties with real credentials to version control
+
+db.url=jdbc:mysql://localhost:3306/furniture_db
+db.username=your_username_here
+db.password=your_password_here
+db.driver=com.mysql.cj.jdbc.Driver
